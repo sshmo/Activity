@@ -2,7 +2,7 @@
 
 In this application the user can manage and diversify his/her activities.
 
-The code is in Python, JavaScript, HTML, and CSS.
+The code is in Python, JavaScript, HTML and CSS.
 
 [http://active0.herokuapp.com/](http://active0.herokuapp.com/)
 
