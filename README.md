@@ -37,7 +37,7 @@ The code is in Python, JavaScript, HTML and CSS.
 
 * __Activity score:__ The user can store daily scores for each defined activity via add_score.html.
 
-* __Activity heatmap:__ The user can specify a target for total daily score.
+* __Activity heatmap:__ The user can see activity heatmap for each activity.
 
 * __light/dark mode:__ The user can change app mode.
 
@@ -59,26 +59,41 @@ For each day that user does not do a specific activity, the activity grade decre
 
 
 ### Target score
+
 The user specifies a target for total daily score. 
+
 For example if the total target score is 100, the user should do at least 10 diffrent activities to fulfill the target score.
 
 
 ### Percentage of activity acomplishment
+
 The percentage of activity acomplishment in the week is calulated as the average of the score in the week devided by target score.
+
 100% score means that the activity matched the target score in the 7 day timspan.
 
 
 ### Activity Grade
+
 The activity grade is calculated as (today_score + 7day average score)/2:
+
 The grade has two parts:
+
 Today activity and 7day hisory activity.  
+
 The grade score measures overall activity of the user for today. 
+
 If the activity has a solid history score (7 day average score), then the user can relax the activity for today, 
+
 but if the  history score is low, the user should hit higher daily score for a good daily grade.
 
 ### Activity priority
+
 The priority is calculated as (10 - (Target_score-Grade_score) + 1)
+
 In one hand, if the target score is 10 and the grade is zero, then for a target score of 10, activity priority is 1,
+
 meaning that the activity has a high priority for today.
+
 and on the other hand if the grade is 10 for a target score of 10, then priority of the activity is 11, 
+
 meaning  that the activity has a low priority for today,
