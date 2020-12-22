@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Heatmap.
+{% endblock %}
+
+{% block main %}
+  {%if activities[-1] == "POST" %}
+    <img src="data:image/png;base64, {{ activities[0] }}">
+  {% endif %}
+
+  <form action="/heatmap" method="post">
+      <div class="form-group">
+          <select class="form-control" name="activity">
+              <option disabled selected value="">Activity</option>
+                  {% for activity in activities[1:-1] %}
+                      <option value="{{activity}}">{{activity}}</option>
+                  {% endfor %}
+          </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  
+{% endblock %}

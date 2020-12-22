@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main.
+{% endblock %}
+
+
+{% block main %}
+            <h1>This is activity!</h1>
+            <p> With this application you can manage and expand your regular activities in a weekly based timespan</p>
+            <script src="{{ url_for('static', filename='day.js') }}"></script>
+            <table class="table table-striped mx-auto">
+                <thead class="thead-dark"> 
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Activity</th>
+                        <th scope="col">Target</th>
+                        <th scope="col" id="mon">Mon.</th>
+                        <th scope="col" id="tue">Tue.</th>
+                        <th scope="col" id="wed">Wed.</th>
+                        <th scope="col" id="tur">Tur.</th>
+                        <th scope="col" id="fri">Fri.</th>
+                        <th scope="col" id="sat">Sat.</th>
+                        <th scope="col" id="sun">Sun.</th>
+                        <th scope="col">Percent</th>
+                        <th scope="col">Grade</th>
+                        <th scope="col">Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(0, activities['sum_index']): %}
+                        <tr>
+                            <th scope="row">{{i + 1}}</th>
+                            <th scope="row">{{activities['df_prio']['Activity'][i]}}</th>
+                            <th scope="row">{{activities['df_prio']['Target'][i]}}</th>
+                            {% for j in range(0,7): %}
+                                <td>{{activities['df_prio'][j][i]}}</td>
+                            {% endfor %}
+                            <td>{{activities['df_prio']['Percent'][i]}}</td>
+                            <td>{{activities['df_prio']['Grade'][i]}}</td>
+                            <td>{{activities['df_prio']['Priority'][i]}}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <th scope="row">-</th>
+                        <th scope="row">Total</th>
+                        <th scope="row">{{activities['df_prio']['Target'][activities['sum_index']]}}</th>
+                        {% for i in range(0,7): %}
+                            <td>{{activities['df_prio'][i][activities['sum_index']]}}</td>
+                        {% endfor %}
+                        <td>{{activities['df_prio']['Percent'][activities['sum_index']]}}</td>
+                        <td>{{activities['df_prio']['Grade'][activities['sum_index']]}}</td>
+                        <td>{{activities['df_prio']['Priority'][activities['sum_index']]}}</td>
+                    </tr>
+                </tbody>
+            </table>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add.
+{% endblock %}
+
+{% block main %}   
+        <form action="/add_activity" method="POST">
+            <div class="form-group">
+                <input autofocus class="form-control" name='activity' type="text" placeholder="Activity">   
+            </div> 
+            <div class="form-group">
+                <input autofocus class="form-control" name='score' type="number" min="1" max="10" placeholder="Score">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Add">
+        </form>
+{% endblock %}

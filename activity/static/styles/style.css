@@ -1,0 +1,83 @@
+.today {
+  background-color: #007bff !important;
+  border-top-color: #007bff !important;
+  border-bottom-color: #007bff !important;
+}
+
+#logo {
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: left;
+}
+
+@media (min-width: 900px) {
+  #logo {
+    width: 10%;
+  }
+}
+
+@media (max-width: 899px) {
+  #logo {
+    width: 15%;
+  }
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.dark-mode {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+ul, p, h1 {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+ul li, p li, h1 li {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+p, h1 {
+  text-align: justify;
+}
+
+.alert {
+  margin-top: 1%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 0.5%;
+}
+
+th, td {
+  text-align: center;
+}
+
+nav .navbar-brand {
+  /* size for brand */
+  font-size: xx-large;
+}
+
+main .form-control {
+  /* center form controls */
+  display: inline-block;
+  /* override Bootstrap's 100% width for form controls */
+  width: auto;
+}
+
+main {
+  /* center contents */
+  text-align: center;
+}
+
+main tfoot {
+  /* boldface tables' footers */
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */
